@@ -112,7 +112,7 @@ getgenv().Connections.RenderStepped = Run.RenderStepped:Connect(function()
                         Holding = true
                         mouse2press()
                         task.spawn(function()
-                            task.wait(L_Player.Character:FindFirstChildOfClass("Tool").PerfectBlockWindow.Value + 0.2)
+                            task.wait(L_Player.Character:FindFirstChildOfClass("Tool").PerfectBlockWindow.Value)
                             mouse2release()
                             Holding = false
                         end)
