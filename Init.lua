@@ -1,4 +1,4 @@
--- @author xgamerman626
+-- @author xGamerman626
 
 -- Disconnections
 if getgenv().Activated == true then
@@ -87,7 +87,6 @@ local Holding = false
 -- Functions
 local function DistanceCheck(Target)
     if L_Player:DistanceFromCharacter(Target.HumanoidRootPart.Position) < 7 then
-        print("Block", Target)
         return true
     end
 end
