@@ -94,7 +94,7 @@ local FullBright_Toggle_Misc = Visuals_Section_Misc:addToggle({
     state = false
 })
 
-Visuals_Section_FullBright:addSlider({
+Visuals_Section_Misc:addSlider({
     text = "Brightness",
     min = 1,
     max = 5,
