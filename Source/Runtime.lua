@@ -117,7 +117,7 @@ end
 -- Main
 function Runtime:Init()
 
-    UI:Init()
+    --UI:Init()
 
     getgenv().Connections.RenderStepped = Run.RenderStepped:Connect(function()
         if L_Player.Character:FindFirstChild("Humanoid") == false then
