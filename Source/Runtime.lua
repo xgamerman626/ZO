@@ -14,7 +14,7 @@ local Players = game:GetService("Players")
 local Run = game:GetService("RunService")
 
 -- Requires
---local UI = loadstring(readfile("xGamer626Zo/Libraries/UI.lua"))()
+local UI = loadstring(readfile("xGamer626Zo/Libraries/UI.lua"))()
 
 -- Locals
 local Runtime = {}
@@ -117,7 +117,7 @@ end
 -- Main
 function Runtime:Init()
 
-    --UI:Init()
+    UI:Init()
 
     getgenv().Connections.RenderStepped = Run.RenderStepped:Connect(function()
         if L_Player.Character:FindFirstChild("Humanoid") == false then
