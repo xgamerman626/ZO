@@ -14,7 +14,7 @@ local Players = game:GetService("Players")
 local Run = game:GetService("RunService")
 
 -- Requires
-local UI = loadstring(readfile("xGamer626Zo/Libraries/UI.lua"))()
+--local UI = loadstring(readfile("xGamer626Zo/Libraries/UI.lua"))()
 
 -- Locals
 local Runtime = {}
