@@ -152,26 +152,26 @@ function Runtime:Init()
             end
         end
     
-        -- Full Brightness
-        if getgenv().Toggles.FullBright == true then
-            Lighting.Brightness = getgenv().Sliders.Brightness
-        else
-            Lighting.Brightness = 3.25
-        end
+        -- -- Full Brightness
+        -- if getgenv().Toggles.FullBright == true then
+        --     Lighting.Brightness = getgenv().Sliders.Brightness
+        -- else
+        --     Lighting.Brightness = 3.25
+        -- end
     
-        -- No Fog
-        if getgenv().Toggles.NoFog == true then
-            Lighting.Atmosphere.Density = 0
-        else
-            Lighting.Atmosphere.Density = 0.35
-        end
+        -- -- No Fog
+        -- if getgenv().Toggles.NoFog == true then
+        --     Lighting.Atmosphere.Density = 0
+        -- else
+        --     Lighting.Atmosphere.Density = 0.35
+        -- end
     
-        -- No Blur
-        if getgenv().Toggles.NoBlur == true then
-            Lighting.DepthOfField.Enabled = false
-        else
-            Lighting.DepthOfField.Enabled = true
-        end
+        -- -- No Blur
+        -- if getgenv().Toggles.NoBlur == true then
+        --     Lighting.DepthOfField.Enabled = false
+        -- else
+        --     Lighting.DepthOfField.Enabled = true
+        -- end
     
     end)
 
