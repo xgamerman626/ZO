@@ -15,6 +15,7 @@ local Run = game:GetService("RunService")
 
 -- Requires
 local UI = loadstring(readfile("xGamer626Zo/Libraries/UI.lua"))()
+local ACB = loadstring(readfile("xGamer626Zo/Libraries/ACB.lua"))()
 
 -- Locals
 local Runtime = {}
@@ -109,14 +110,17 @@ local Holding = false
 
 -- Functions
 local function DistanceCheck(Target)
-    if L_Player:DistanceFromCharacter(Target.HumanoidRootPart.Position) < getgenv().Sliders.AutoParryDistance then
-        return true
+    if Target:FindFirstChild("HumanoidRootPart") then
+        if L_Player:DistanceFromCharacter(Target.HumanoidRootPart.Position) < getgenv().Sliders.AutoParryDistance then
+            return true
+        end
     end
 end
 
 -- Main
 function Runtime:Init()
 
+    ACB:Init()
     UI:Init()
 
     getgenv().Connections.RenderStepped = Run.RenderStepped:Connect(function()
@@ -128,7 +132,7 @@ function Runtime:Init()
         if getgenv().Toggles.AutoParry == true then
             for _, Player in pairs(Players:GetPlayers()) do
     
-                if Player ~= L_Player and L_Player.Character:FindFirstChildOfClass("Tool") and L_Player.Character:FindFirstChildOfClass("Tool").Blocking.Value == false and Player.Character then
+                if Player ~= L_Player and L_Player.Character:FindFirstChildOfClass("Tool") and L_Player.Character:FindFirstChildOfClass("Tool").Blocking.Value == false and Player.Character:FindFirstChild("Humanoid") then
         
                     -- Locals
                     local Character = Player.Character
@@ -160,18 +164,18 @@ function Runtime:Init()
         -- end
     
         -- -- No Fog
-        -- if getgenv().Toggles.NoFog == true then
-        --     Lighting.Atmosphere.Density = 0
-        -- else
-        --     Lighting.Atmosphere.Density = 0.35
-        -- end
+        if getgenv().Toggles.NoFog == true then
+            Lighting.Atmosphere.Density = 0
+        else
+            Lighting.Atmosphere.Density = 0.35
+        end
     
         -- -- No Blur
-        -- if getgenv().Toggles.NoBlur == true then
-        --     Lighting.DepthOfField.Enabled = false
-        -- else
-        --     Lighting.DepthOfField.Enabled = true
-        -- end
+        if getgenv().Toggles.NoBlur == true then
+            Lighting.DepthOfField.Enabled = false
+        else
+            Lighting.DepthOfField.Enabled = true
+        end
     
     end)
 
