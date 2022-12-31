@@ -16,7 +16,7 @@ function ACB:Init()
         local Args = {...}
     
         if not checkcaller() and Method == "FireServer" and self.Name == "" then
-            return print("WindowFocused Remote attempted to fire.")
+            return
         end
 
         if not checkcaller() and Method == "FireServer" and self.Name == "14qowq2\226\128\139mZOZO" then
