@@ -15,7 +15,11 @@ function ACB:Init()
         local Method = getnamecallmethod()
         local Args = {...}
     
-        if not checkcaller() and Method == "FireServer" and tostring(self) == "14qowq2\226\128\139mZOZO" then
+        if not checkcaller() and Method == "FireServer" and self.Name == "" then
+            return print("WindowFocused Remote attempted to fire.")
+        end
+
+        if not checkcaller() and Method == "FireServer" and self.Name == "14qowq2\226\128\139mZOZO" then
             -- JumpPower
             if Args[1] == "ZCXZCASCASCAWECASDCWASCAW" then
                 return print("JumpPower Remote attempted to fire.")
